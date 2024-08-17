@@ -1,48 +1,48 @@
 import React from 'react';
-import './Footer.css'; // Make sure to create this CSS file
+import { useTranslation } from 'react-i18next';
+import './Footer.css'; // Make sure this CSS file is created and contains appropriate styles
 
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer id="footer" className="footer">
       <div className="container footer-top">
         <div className="row gy-4">
           <div className="col-lg-4 col-md-6 footer-about">
             <a href="index.html" className="d-flex align-items-center">
-              <span className="sitename">FlexStart</span>
+              <img src="logo-color.png" alt={t('footer_logo_alt')} style={{ width: '190px', height: 'auto' }} />
             </a>
             <div className="footer-contact pt-3">
-              <p>A108 Adam Street</p>
-              <p>New York, NY 535022</p>
-              <p className="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-              <p><strong>Email:</strong> <span>info@example.com</span></p>
+              <p>{t('footer_address')}</p>
+              <p className="mt-3"><strong>{t('footer_phone_label')}:</strong> <span>{t('footer_phone')}</span></p>
+              <p><strong>{t('footer_email_label')}:</strong> <span>{t('footer_email')}</span></p>
             </div>
           </div>
 
           <div className="col-lg-2 col-md-3 footer-links">
-            <h4>Useful Links</h4>
+            <h4>{t('footer_useful_links')}</h4>
             <ul>
-              <li><i className="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i className="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i className="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i className="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i className="bi bi-chevron-right"></i> <a href="#">{t('footer_home')}</a></li>
+              <li><i className="bi bi-chevron-right"></i> <a href="#">{t('footer_about')}</a></li>
+              <li><i className="bi bi-chevron-right"></i> <a href="#">{t('footer_services')}</a></li>
             </ul>
           </div>
 
           <div className="col-lg-2 col-md-3 footer-links">
-            <h4>Our Services</h4>
+            <h4>{t('footer_our_services')}</h4>
             <ul>
-              <li><i className="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i className="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i className="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i className="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i className="bi bi-chevron-right"></i> <a href="#">{t('footer_web_design')}</a></li>
+              <li><i className="bi bi-chevron-right"></i> <a href="#">{t('footer_web_development')}</a></li>
+              <li><i className="bi bi-chevron-right"></i> <a href="#">{t('footer_product_management')}</a></li>
+              <li><i className="bi bi-chevron-right"></i> <a href="#">{t('footer_marketing')}</a></li>
             </ul>
           </div>
 
           <div className="col-lg-4 col-md-12">
-            <h4>Follow Us</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <h4>{t('footer_follow_us')}</h4>
+            <p>{t('footer_follow_us_description')}</p>
             <div className="social-links d-flex">
-              <a href="#"><i className="bi bi-twitter"></i></a>
               <a href="#"><i className="bi bi-facebook"></i></a>
               <a href="#"><i className="bi bi-instagram"></i></a>
               <a href="#"><i className="bi bi-linkedin"></i></a>
@@ -52,9 +52,9 @@ function Footer() {
       </div>
 
       <div className="container copyright text-center mt-4">
-        <p>© <span>Copyright</span> <strong className="px-1 sitename">FlexStart</strong> <span>All Rights Reserved</span></p>
+        <p>{t('footer_copyright_start')} <span>{t('footer_copyright')}</span> <strong className="px-1 sitename"></strong> <span>{t('footer_copyright_end')}</span></p>
         <div className="credits">
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          {t('footer_credits_start')} <a href="#">{t('footer_credits_name')}</a>
         </div>
       </div>
     </footer>
