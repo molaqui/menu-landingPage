@@ -107,7 +107,7 @@
   "last_name": "Last Name",
   "email": "Email",
   "phone": "Phone",
-  "store_name": "Store Name",
+ "store_name": "Restaurant Name" ,
   "city": "City",
   "password": "Password",
   "submit": "Submit",
